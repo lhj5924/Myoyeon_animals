@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"No tests specified\"",
     "start": "webpack serve --open",
-    "build": "webpack",
-    "deploy": "gh-pages -d dist"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
