@@ -20,7 +20,7 @@
 
 /*! ./views/PostView */
 
-/*! Build version: 95345f8 */
+/*! Build version: e580ae2 */
 
 /*! react */
 
