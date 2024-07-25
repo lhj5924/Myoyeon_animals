@@ -5,6 +5,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const webpack = require("webpack");
 const banner = require("./banner.js");
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
     mode: 'development',
@@ -80,10 +81,10 @@ module.exports = {
             filename: '[name].[contenthash].css',
             chunkFilename: '[id].[contenthash].css',
         }),
-        new BundleAnalyzerPlugin(),
+        isProduction && new BundleAnalyzerPlugin(),
         new webpack.BannerPlugin(banner),
         new webpack.HotModuleReplacementPlugin(),
-    ],
+    ].filter(Boolean),
     optimization: {
         minimize: true,
         minimizer: [
