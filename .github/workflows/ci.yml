@@ -1,7 +1,10 @@
-name: Deploy to GitHub Pages
+name: CI/CD Pipeline
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -11,12 +14,35 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # 최신 버전으로 변경
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3  # 최신 버전으로 변경
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'  # 최신 LTS 버전으로 변경
+          node-version: '20.12.0'  # 특정 Node.js 버전으로 설정
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.12.0'  # 특정 Node.js 버전으로 설정
 
       - name: Install dependencies
         run: npm install
