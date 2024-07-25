@@ -1,3 +1,7 @@
+/*! Build version: 95345f8 */
+/*!*******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/assets/styles/reset.css ***!
+  \*******************************************************************************/
 /* box-sizing 규칙을 명시합니다. */
 *,
 *::before,
@@ -87,3 +91,17 @@ textarea:not([rows]) {
 :target {
     scroll-margin-block: 5ex;
 }
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/index.scss ***!
+  \***********************************************************************************************************************/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #3498db;
+}
+
+h1 {
+  color: #3498db;
+}
+
+/*# sourceMappingURL=main.2343ee369be202cf7ba1.css.map*/
