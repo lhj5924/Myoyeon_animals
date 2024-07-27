@@ -19,9 +19,9 @@ sketch
 /build
 
 ### environment variables
+.env
 .env.development
-.env.development
-.env.development
+.env.production
 .env.test.local
 .env.production.local
 
