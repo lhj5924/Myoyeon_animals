@@ -4,12 +4,12 @@
 const { execSync } = require('child_process');
 
 function banner() {
-    try {
-        const commitHash = execSync('git rev-parse --short HEAD').toString().trim();
-        return `Build version: ${commitHash}`;
-    } catch (error) {
-        return 'Build version: unknown';
-    }
+  try {
+    const commitHash = execSync('git rev-parse --short HEAD').toString().trim();
+    return `Build version: ${commitHash}`;
+  } catch (error) {
+    return 'Build version: unknown';
+  }
 }
 
 module.exports = banner;
